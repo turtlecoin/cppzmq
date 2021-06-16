@@ -331,7 +331,7 @@ class multipart_t
     multipart_t() {}
 
     // Construct from socket receive
-    multipart_t(socket_ref socket) { recv(socket); }
+    multipart_t(socket_ref socket, int flags = 0) { recv(socket, flags); }
 
     // Construct from memory block
     multipart_t(const void *src, size_t size) { addmem(src, size); }
